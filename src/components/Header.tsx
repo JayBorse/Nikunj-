@@ -65,9 +65,12 @@ export default function Header() {
               if (link.dropdown) {
                 return (
                   <div key={link.name} className="relative group">
-                    <button className="text-brand-text hover:text-brand-green px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 focus:outline-none">
+                    <Link
+                      href={link.href}
+                      className="text-brand-text hover:text-brand-green px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 focus:outline-none"
+                    >
                       {link.name} <i className="fa-solid fa-chevron-down text-[10px]"></i>
-                    </button>
+                    </Link>
                     {/* Hover Dropdown */}
                     <div className="absolute left-0 mt-0 w-48 bg-white border border-brand-border rounded-md shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 py-2">
                       <Link
@@ -193,9 +196,13 @@ export default function Header() {
                   if (link.dropdown) {
                     return (
                       <div key={link.name} className="py-1">
-                        <span className="block px-2 py-1 text-xs font-bold text-brand-text-light uppercase tracking-wider">
+                        <Link
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          href="/shop"
+                          className="block px-2 py-1 text-xs font-bold text-brand-text-light uppercase tracking-wider hover:text-brand-green"
+                        >
                           {link.name}
-                        </span>
+                        </Link>
                         <div className="pl-3 grid grid-cols-1 gap-1.5 mt-2 border-l border-brand-border">
                           <Link
                             onClick={() => setIsMobileMenuOpen(false)}
