@@ -1,7 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 
 export default function Footer() {
+  const [hoveredJignesh, setHoveredJignesh] = useState(false);
+  const [hoveredBorse, setHoveredBorse] = useState(false);
   return (
     <footer className="bg-brand-card pt-16 pb-8 border-t border-brand-border mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -168,13 +172,65 @@ export default function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-brand-border flex flex-col md:flex-row justify-between items-center">
-          <p className="text-xs text-brand-text-light mb-4 md:mb-0">
-            © {new Date().getFullYear()} Nikunj. All rights reserved.
-          </p>
-          <div className="text-brand-text/20">
+        <div className="pt-8 border-t border-brand-border grid grid-cols-1 md:grid-cols-3 items-center gap-4 text-center">
+          
+          {/* Left: Copyright */}
+          <div className="text-xs text-brand-text-light md:text-left order-2 md:order-1">
+            <p>© {new Date().getFullYear()} Nikunj. All rights reserved.</p>
+          </div>
+
+          {/* Center: Creator Credits */}
+          <div className="text-[11px] text-brand-text/70 flex items-center justify-center gap-1 flex-wrap order-1 md:order-2">
+            <span>Created by</span>
+            <div 
+              className="relative inline-block"
+              onMouseEnter={() => setHoveredJignesh(true)}
+              onMouseLeave={() => setHoveredJignesh(false)}
+            >
+              <a
+                href="https://jignesh-portfolio-4.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-green hover:text-brand-gold font-semibold underline decoration-wavy decoration-brand-gold/60 hover:decoration-brand-green transition-all duration-300 hover:scale-105 active:scale-95 inline-block"
+                title="View Jignesh's Portfolio 4"
+              >
+                Jignesh
+              </a>
+              {hoveredJignesh && (
+                <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-sm animate-bunny-jump pointer-events-none z-30">
+                  🐰
+                </span>
+              )}
+            </div>
+            <div 
+              className="relative inline-block"
+              onMouseEnter={() => setHoveredBorse(true)}
+              onMouseLeave={() => setHoveredBorse(false)}
+            >
+              <a
+                href="https://jignesh-portfolio-3.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-gold hover:text-brand-green font-semibold underline decoration-wavy decoration-brand-green/60 hover:decoration-brand-gold transition-all duration-300 hover:scale-105 active:scale-95 inline-block"
+                title="View Borse's Portfolio 3"
+              >
+                Borse
+              </a>
+              {hoveredBorse && (
+                <span className="absolute inset-0 pointer-events-none z-30">
+                  <span className="absolute left-0 bottom-full text-[10px] animate-bubble-1">🫧</span>
+                  <span className="absolute left-1/3 bottom-full text-[12px] animate-bubble-2">🫧</span>
+                  <span className="absolute left-2/3 bottom-full text-[8px] animate-bubble-3">🫧</span>
+                </span>
+              )}
+            </div>
+          </div>
+
+          {/* Right: Lotus Icon */}
+          <div className="text-brand-text/20 md:text-right flex justify-center md:justify-end order-3">
             <i className="fa-solid fa-lotus text-2xl animate-pulse"></i>
           </div>
+
         </div>
       </div>
     </footer>

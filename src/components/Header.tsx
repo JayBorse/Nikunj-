@@ -242,6 +242,88 @@ export default function Header() {
                     </Link>
                   );
                 })}
+                
+                {/* My Account Section */}
+                <div className="py-2 border-t border-brand-border/60 mt-4">
+                  <span className="block px-3 py-1 text-xs font-bold text-brand-text-light uppercase tracking-wider">
+                    My Account
+                  </span>
+                  <div className="pl-3 grid grid-cols-1 gap-1.5 mt-2">
+                    <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="/profile"
+                      className="text-sm py-1.5 px-2 rounded-md text-brand-text hover:bg-brand-bg flex items-center gap-2"
+                    >
+                      <i className="fa-regular fa-user text-xs text-brand-green w-4 text-center"></i> Profile Panel
+                    </Link>
+                    <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="/wishlist"
+                      className="text-sm py-1.5 px-2 rounded-md text-brand-text hover:bg-brand-bg flex items-center gap-2"
+                    >
+                      <i className="fa-regular fa-heart text-xs text-brand-green w-4 text-center"></i> My Wishlist
+                    </Link>
+                    <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="/cart"
+                      className="text-sm py-1.5 px-2 rounded-md text-brand-text hover:bg-brand-bg flex items-center gap-2"
+                    >
+                      <i className="fa-solid fa-cart-shopping text-xs text-brand-green w-4 text-center"></i> Shopping Cart
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Customer Care Section */}
+                <div className="py-2 border-t border-brand-border/60 mt-2">
+                  <span className="block px-3 py-1 text-xs font-bold text-brand-text-light uppercase tracking-wider">
+                    Customer Care
+                  </span>
+                  <div className="pl-3 grid grid-cols-1 gap-1.5 mt-2">
+                    <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="/faqs"
+                      className="text-sm py-1.5 px-2 rounded-md text-brand-text hover:bg-brand-bg hover:text-brand-green transition-colors"
+                    >
+                      FAQs
+                    </Link>
+                    <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="/shipping-delivery"
+                      className="text-sm py-1.5 px-2 rounded-md text-brand-text hover:bg-brand-bg hover:text-brand-green transition-colors"
+                    >
+                      Shipping &amp; Delivery
+                    </Link>
+                    <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="/return-policy"
+                      className="text-sm py-1.5 px-2 rounded-md text-brand-text hover:bg-brand-bg hover:text-brand-green transition-colors"
+                    >
+                      Return Policy
+                    </Link>
+                    <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="/cancellation-policy"
+                      className="text-sm py-1.5 px-2 rounded-md text-brand-text hover:bg-brand-bg hover:text-brand-green transition-colors"
+                    >
+                      Cancellation Policy
+                    </Link>
+                    <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="/privacy-policy"
+                      className="text-sm py-1.5 px-2 rounded-md text-brand-text hover:bg-brand-bg hover:text-brand-green transition-colors"
+                    >
+                      Privacy Policy
+                    </Link>
+                    <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="/terms-conditions"
+                      className="text-sm py-1.5 px-2 rounded-md text-brand-text hover:bg-brand-bg hover:text-brand-green transition-colors"
+                    >
+                      Terms &amp; Conditions
+                    </Link>
+                  </div>
+                </div>
+
               </div>
             </div>
 
