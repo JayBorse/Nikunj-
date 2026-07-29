@@ -58,41 +58,43 @@ export default function WishlistPage() {
       </div>
 
       {/* Wishlist items Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
         {wishlistItems.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-xl overflow-hidden border border-brand-border shadow-sm group flex flex-col justify-between hover:shadow-md transition-shadow relative"
+            className="group bg-white rounded-xl border border-brand-border overflow-hidden hover:shadow-lg transition-shadow relative flex flex-col justify-between"
           >
             {/* Delete/Heart button */}
             <button
               onClick={() => toggleWishlist(item)}
-              className="absolute top-3 right-3 z-10 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center text-red-500 hover:bg-red-50 transition-colors shadow-sm focus:outline-none"
+              className="absolute top-3 right-3 z-10 w-8 h-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-red-500 hover:bg-white transition-colors cursor-pointer"
               title="Remove from Wishlist"
             >
               <i className="fa-solid fa-heart"></i>
             </button>
 
             <Link href={`/shop/${item.id}`} className="block overflow-hidden flex-grow animate-fade-in">
-              <div className="aspect-square bg-gray-100 relative overflow-hidden">
+              <div className="aspect-[4/5] bg-gray-50 overflow-hidden">
                 <img
                   alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   src={item.image}
                 />
               </div>
-              <div className="p-4 pb-2">
-                <h3 className="font-medium text-brand-text mb-1 truncate group-hover:text-brand-green transition-colors">
+              <div className="p-4 pb-2 text-xs">
+                <h3 className="font-semibold text-gray-900 truncate group-hover:text-brand-green transition-colors text-sm mb-1.5">
                   {item.name}
                 </h3>
-                <span className="font-semibold text-brand-text text-sm block">₹{item.price}</span>
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-bold text-brand-green text-base font-serif">₹{item.price}</span>
+                </div>
               </div>
             </Link>
 
             <div className="p-4 pt-0">
               <button
                 onClick={() => handleMoveToCart(item)}
-                className="w-full bg-brand-green hover:bg-brand-green-hover text-white py-2 rounded-md font-semibold text-xs transition-colors shadow-sm focus:outline-none flex items-center justify-center gap-1.5 mt-2"
+                className="w-full bg-brand-green hover:bg-brand-green-hover text-white py-2.5 rounded-lg font-semibold text-xs transition-colors shadow-sm focus:outline-none flex items-center justify-center gap-1.5 mt-2 cursor-pointer"
               >
                 <i className="fa-solid fa-cart-shopping"></i> Move to Cart
               </button>

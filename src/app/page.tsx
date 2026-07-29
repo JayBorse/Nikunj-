@@ -22,26 +22,25 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative mx-4 sm:mx-8 lg:mx-12 mt-6 rounded-2xl overflow-hidden shadow-sm h-[500px] hero-bg flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-bg/90 to-transparent w-2/3"></div>
+      <section className="relative mx-4 sm:mx-8 lg:mx-12 mt-6 rounded-2xl overflow-hidden shadow-sm h-[400px] md:h-[500px] hero-bg flex items-center">
+        <div className="absolute inset-0 bg-brand-bg/85 md:bg-transparent md:bg-gradient-to-r md:from-brand-bg/90 md:to-transparent w-full md:w-2/3 z-0 pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 w-full">
           <div className="max-w-lg">
-            <h1 className="font-serif text-5xl md:text-6xl text-brand-text leading-tight mb-4">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl text-brand-text leading-tight mb-3 md:mb-4">
               Handcrafted
               <br />
               with Devotion,
               <br />
               for Your Kanha
             </h1>
-            <p className="text-brand-text-light text-lg mb-8 font-serif italic">
+            <p className="text-brand-text-light text-sm sm:text-base md:text-lg mb-5 md:mb-8 font-serif italic">
               Beautiful dresses &amp; accessories
               <br />
               for Laddu Gopal Ji
             </p>
             <Link
               href="/shop"
-              className="inline-block bg-brand-green hover:bg-brand-green-hover text-white px-8 py-3 rounded-md font-medium transition-colors shadow-md"
+              className="inline-block bg-brand-green hover:bg-brand-green-hover text-white px-6 py-2.5 md:px-8 md:py-3 rounded-md font-medium text-xs md:text-sm transition-colors shadow-md"
             >
               Shop Collection
             </Link>
@@ -51,52 +50,52 @@ export default function Home() {
 
       {/* Trust Bar */}
       <section className="max-w-6xl mx-auto mt-6 mb-16 px-4">
-        <div className="bg-brand-card rounded-xl py-6 px-4 flex flex-col md:flex-row justify-around items-center border border-brand-border/50 shadow-sm gap-6 md:gap-0">
-          <div className="flex items-center space-x-4">
-            <div className="text-brand-green flex items-center justify-center">
-              <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
-                {/* Heart */}
-                <path d="M12,5C13.88,5 15.4,6.5 15.4,8.4C15.4,11.5 12,14.7 12,14.7C12,14.7 8.6,11.5 8.6,8.4C8.6,6.5 10.12,5 12,5Z" />
-                {/* Left Hand */}
-                <path d="M6,13C6.55,13 7,13.45 7,14C7,15.1 7.9,16 9,16C9.55,16 10,16.45 10,17C10,17.55 9.55,18 9,18C6.8,18 5,16.2 5,14C5,13.45 5.45,13 6,13Z" />
-                {/* Right Hand */}
-                <path d="M18,13C18.55,13 19,13.45 19,14C19,16.2 17.2,18 15,18C14.45,18 14,17.55 14,17C14,16.45 14.45,16 15,16C16.1,16 17,15.1 17,14C17,13.45 17.45,13 18,13Z" />
-              </svg>
+        <div className="bg-brand-card rounded-xl py-4 px-2 md:py-6 md:px-4 grid grid-cols-3 md:flex md:flex-row md:justify-around items-start md:items-center border border-brand-border/50 shadow-sm gap-3 md:gap-0">
+          
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+            <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shrink-0">
+              <img
+                src="/logo_hands_heart.png"
+                alt="Handmade by Homemakers Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
-              <h3 className="font-medium text-brand-text leading-tight">
+              <h3 className="font-bold md:font-medium text-brand-text text-[10px] sm:text-xs md:text-sm leading-tight">
                 Handmade by
-                <br />
-                Homemakers
+                <br className="hidden md:block" /> Homemakers
               </h3>
             </div>
           </div>
+          
           <div className="hidden md:block h-10 w-px bg-brand-border"></div>
-          <div className="flex items-center space-x-4">
-            <div className="text-brand-green text-3xl">
+          
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+            <div className="text-brand-green text-2xl md:text-3xl flex items-center justify-center h-10 w-10 md:h-12 md:w-12">
               <i className="fa-solid fa-truck-fast"></i>
             </div>
             <div>
-              <h3 className="font-medium text-brand-text leading-tight">
+              <h3 className="font-bold md:font-medium text-brand-text text-[10px] sm:text-xs md:text-sm leading-tight">
                 Pan India
-                <br />
-                Delivery
+                <br className="hidden md:block" /> Delivery
               </h3>
             </div>
           </div>
+          
           <div className="hidden md:block h-10 w-px bg-brand-border"></div>
-          <div className="flex items-center space-x-4">
-            <div className="text-brand-green text-3xl">
+          
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+            <div className="text-brand-green text-2xl md:text-3xl flex items-center justify-center h-10 w-10 md:h-12 md:w-12">
               <i className="fa-solid fa-om"></i>
             </div>
             <div>
-              <h3 className="font-medium text-brand-text leading-tight">
+              <h3 className="font-bold md:font-medium text-brand-text text-[10px] sm:text-xs md:text-sm leading-tight">
                 Crafted with
-                <br />
-                Devotion
+                <br className="hidden md:block" /> Devotion
               </h3>
             </div>
           </div>
+          
         </div>
       </section>
 
@@ -151,11 +150,10 @@ export default function Home() {
             <button
               key={tab}
               onClick={() => setActiveFeaturedTab(tab)}
-              className={`px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap snap-start transition-all duration-200 cursor-pointer focus:outline-none ${
-                activeFeaturedTab === tab
+              className={`px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap snap-start transition-all duration-200 cursor-pointer focus:outline-none ${activeFeaturedTab === tab
                   ? "bg-brand-green text-white shadow-sm"
                   : "bg-white text-brand-text border border-brand-border hover:bg-brand-bg"
-              }`}
+                }`}
             >
               {tab}
             </button>
@@ -168,7 +166,7 @@ export default function Home() {
             return (
               <div
                 key={product.id}
-                className="bg-white rounded-xl overflow-hidden border border-brand-border shadow-sm group relative flex flex-col justify-between"
+                className="group bg-white rounded-xl border border-brand-border overflow-hidden hover:shadow-lg transition-shadow relative flex flex-col justify-between"
               >
                 {/* Wishlist toggle */}
                 <button
@@ -180,47 +178,47 @@ export default function Home() {
                       image: product.image,
                     })
                   }
-                  className="absolute top-3 right-3 z-10 w-8 h-8 bg-white/85 rounded-full flex items-center justify-center text-brand-text hover:text-red-500 transition-colors shadow-sm focus:outline-none"
+                  className="absolute top-3 right-3 z-10 w-8 h-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-500 hover:text-red-500 hover:bg-white transition-colors cursor-pointer"
                   aria-label="Add to Wishlist"
                 >
-                  <i
-                    className={`${
-                      isFav ? "fa-solid fa-heart text-red-500 animate-bounce" : "fa-regular fa-heart"
-                    }`}
-                  ></i>
+                  <i className={isFav ? "fa-solid fa-heart text-red-500" : "fa-regular fa-heart"}></i>
                 </button>
 
                 <Link href={`/shop/${product.id}`} className="block overflow-hidden flex-grow">
-                  <div className="aspect-square bg-gray-100 relative overflow-hidden">
+                  <div className="aspect-[4/5] bg-gray-50 overflow-hidden">
                     <img
                       alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       src={product.image}
                     />
                   </div>
-                  <div className="p-4 pb-2">
-                    <h3 className="font-medium text-brand-text mb-1 truncate group-hover:text-brand-green transition-colors">
+                  <div className="p-4 pb-2 text-xs">
+                    <span className="text-[10px] text-brand-green font-semibold uppercase tracking-wider block mb-1">
+                      {product.category}
+                    </span>
+                    <h3 className="font-semibold text-gray-900 truncate group-hover:text-brand-green transition-colors text-sm mb-1.5">
                       {product.name}
                     </h3>
-                    <div className="flex items-center mt-2 text-xs">
-                      <div className="text-yellow-400 flex space-x-0.5">
-                        {"★".repeat(Math.floor(product.rating))}
-                        {product.rating % 1 !== 0 && (
-                          <i className="fa-solid fa-star-half-stroke"></i>
-                        )}
-                      </div>
-                      <span className="text-brand-text-light ml-1">
-                        ({product.reviewsCount})
-                      </span>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="font-bold text-brand-green text-base font-serif">₹{product.price}</span>
                     </div>
                   </div>
                 </Link>
 
                 <div className="p-4 pt-0">
-                  <div className="flex items-center justify-between mt-2">
-                    <span className="font-semibold text-lg text-brand-text">
-                      ₹{product.price}
-                    </span>
+                  <div className="flex items-center justify-between mt-1 pt-3 border-t border-gray-100">
+                    <div className="flex items-center text-xs">
+                      <div className="text-brand-gold flex space-x-0.5">
+                        {"★".repeat(Math.floor(product.rating))}
+                        {product.rating % 1 !== 0 && (
+                          <i className="fa-solid fa-star-half-stroke text-[10px]"></i>
+                        )}
+                      </div>
+                      <span className="text-gray-400 ml-1 text-[10px]">
+                        ({product.reviewsCount})
+                      </span>
+                    </div>
+
                     <button
                       onClick={() =>
                         addToCart(
@@ -234,7 +232,7 @@ export default function Home() {
                           1
                         )
                       }
-                      className="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-green hover:text-white hover:border-brand-green transition-colors focus:outline-none"
+                      className="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-green hover:text-white hover:border-brand-green transition-colors focus:outline-none cursor-pointer"
                       title="Add to Cart"
                     >
                       <i className="fa-solid fa-cart-plus text-sm"></i>
@@ -258,18 +256,18 @@ export default function Home() {
       {/* Custom Order Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="custom-order-bg rounded-2xl p-8 flex flex-col lg:flex-row items-center border border-brand-border shadow-sm relative overflow-hidden min-h-[350px] lg:min-h-[280px]">
-          
-          {/* Absolute Background Image fading to the right */}
-          <div className="absolute inset-y-0 left-0 w-full lg:w-[28%] z-0 pointer-events-none">
+
+          {/* Absolute Background Image covering whole background on mobile, 28% width on desktop */}
+          <div className="absolute inset-0 lg:inset-y-0 lg:left-0 lg:right-auto lg:w-[28%] z-0 pointer-events-none">
             <img
               alt="Custom Order Deity"
-              className="w-full h-full object-cover object-left"
+              className="w-full h-full object-cover object-center lg:object-left"
               src="/custom order.JPG"
             />
             {/* Horizontal gradient for desktop */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent/20 to-[#F7F3E9] hidden lg:block"></div>
-            {/* Vertical gradient for mobile */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent/40 to-[#F7F3E9] lg:hidden"></div>
+            {/* Overlay gradient for mobile to keep text readable */}
+            <div className="absolute inset-0 bg-[#F7F3E9]/85 lg:hidden"></div>
           </div>
 
           {/* Left spacer to push text over the faded area */}

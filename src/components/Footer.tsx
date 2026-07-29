@@ -79,34 +79,34 @@ export default function Footer() {
             <h4 className="font-serif text-lg text-brand-text mb-4">Customer Care</h4>
             <ul className="space-y-2 text-sm text-brand-text-light">
               <li>
-                <a href="#" className="hover:text-brand-green transition-colors">
+                <Link href="/faqs" className="hover:text-brand-green transition-colors">
                   FAQs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-green transition-colors">
+                <Link href="/shipping-delivery" className="hover:text-brand-green transition-colors">
                   Shipping &amp; Delivery
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-green transition-colors">
+                <Link href="/return-policy" className="hover:text-brand-green transition-colors">
                   Return Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-green transition-colors">
+                <Link href="/cancellation-policy" className="hover:text-brand-green transition-colors">
                   Cancellation Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-green transition-colors">
+                <Link href="/privacy-policy" className="hover:text-brand-green transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-green transition-colors">
+                <Link href="/terms-conditions" className="hover:text-brand-green transition-colors">
                   Terms &amp; Conditions
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
