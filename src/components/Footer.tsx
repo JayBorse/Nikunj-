@@ -198,7 +198,7 @@ export default function Footer() {
               </a>
               {hoveredJignesh && (
                 <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-sm animate-bunny-jump pointer-events-none z-30">
-                  🐰
+                  🐱
                 </span>
               )}
             </div>
