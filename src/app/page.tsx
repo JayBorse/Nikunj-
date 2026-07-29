@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
@@ -10,8 +10,15 @@ export default function Home() {
   const { addToCart } = useCart();
   const { toggleWishlist, isWishlisted } = useWishlist();
 
-  // Get first 4 products for the featured collection
-  const featuredProducts = products.slice(0, 4);
+  const [activeFeaturedTab, setActiveFeaturedTab] = useState("All");
+
+  // Get filtered featured products based on active tab
+  const featuredProducts = products
+    .filter((p) => {
+      if (activeFeaturedTab === "All") return p.rating >= 4.5;
+      return p.categorySlug === activeFeaturedTab.toLowerCase();
+    })
+    .slice(0, 4);
 
   return (
     <>
@@ -137,7 +144,25 @@ export default function Home() {
           <h2 className="font-serif text-3xl text-brand-text">Featured Collection</h2>
           <div className="h-px bg-brand-border w-12 ml-4"></div>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-10">
+
+        {/* Dynamic Category Tabs */}
+        <div className="flex justify-start md:justify-center mb-8 overflow-x-auto scrollbar-none pb-2 gap-2 snap-x px-2">
+          {["All", "Dresses", "Mukut", "Jewellery", "Jhula"].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveFeaturedTab(tab)}
+              className={`px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap snap-start transition-all duration-200 cursor-pointer focus:outline-none ${
+                activeFeaturedTab === tab
+                  ? "bg-brand-green text-white shadow-sm"
+                  : "bg-white text-brand-text border border-brand-border hover:bg-brand-bg"
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        <div key={activeFeaturedTab} className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-10 animate-fade-in">
           {featuredProducts.map((product) => {
             const isFav = isWishlisted(product.id);
             return (

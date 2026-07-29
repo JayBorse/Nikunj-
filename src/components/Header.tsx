@@ -334,57 +334,62 @@ export default function Header() {
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-brand-border h-16 z-40 flex items-center justify-around px-2 shadow-lg">
         <Link
           href="/"
-          className={`flex flex-col items-center justify-center w-12 h-12 transition-all ${
-            pathname === "/" ? "text-brand-green" : "text-brand-text-light hover:text-brand-green"
+          className={`flex flex-col items-center justify-center w-14 h-12 transition-all relative ${
+            pathname === "/" ? "text-brand-green scale-105 font-bold" : "text-brand-text-light hover:text-brand-green"
           }`}
         >
           <i className="fa-solid fa-house text-lg"></i>
           <span className="text-[9px] font-semibold mt-1">Home</span>
+          {pathname === "/" && <span className="absolute bottom-1 w-5 h-0.5 bg-brand-green rounded-full"></span>}
         </Link>
 
         <Link
           href="/shop"
-          className={`flex flex-col items-center justify-center w-12 h-12 transition-all ${
-            pathname.startsWith("/shop") ? "text-brand-green" : "text-brand-text-light hover:text-brand-green"
+          className={`flex flex-col items-center justify-center w-14 h-12 transition-all relative ${
+            pathname.startsWith("/shop") ? "text-brand-green scale-105 font-bold" : "text-brand-text-light hover:text-brand-green"
           }`}
         >
           <i className="fa-solid fa-om text-lg"></i>
           <span className="text-[9px] font-semibold mt-1">Shop</span>
+          {pathname.startsWith("/shop") && <span className="absolute bottom-1 w-5 h-0.5 bg-brand-green rounded-full"></span>}
         </Link>
 
         <Link
           href="/custom-order"
-          className={`flex flex-col items-center justify-center w-12 h-12 transition-all ${
-            pathname === "/custom-order" ? "text-brand-green" : "text-brand-text-light hover:text-brand-green"
+          className={`flex flex-col items-center justify-center w-14 h-12 transition-all relative ${
+            pathname === "/custom-order" ? "text-brand-green scale-105 font-bold" : "text-brand-text-light hover:text-brand-green"
           }`}
         >
           <i className="fa-solid fa-shirt text-lg"></i>
           <span className="text-[9px] font-semibold mt-1">Custom</span>
+          {pathname === "/custom-order" && <span className="absolute bottom-1 w-5 h-0.5 bg-brand-green rounded-full"></span>}
         </Link>
 
         <Link
           href="/wishlist"
-          className={`flex flex-col items-center justify-center w-12 h-12 transition-all relative ${
-            pathname === "/wishlist" ? "text-brand-green" : "text-brand-text-light hover:text-brand-green"
+          className={`flex flex-col items-center justify-center w-14 h-12 transition-all relative ${
+            pathname === "/wishlist" ? "text-brand-green scale-105 font-bold" : "text-brand-text-light hover:text-brand-green"
           }`}
         >
           <i className="fa-regular fa-heart text-lg"></i>
           {wishlistCount > 0 && (
-            <span className="absolute top-1.5 right-1 bg-red-500 text-white text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+            <span className="absolute top-1.5 right-2 bg-red-500 text-white text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
               {wishlistCount}
             </span>
           )}
           <span className="text-[9px] font-semibold mt-1">Wishlist</span>
+          {pathname === "/wishlist" && <span className="absolute bottom-1 w-5 h-0.5 bg-brand-green rounded-full"></span>}
         </Link>
 
         <Link
           href="/profile"
-          className={`flex flex-col items-center justify-center w-12 h-12 transition-all ${
-            pathname === "/profile" ? "text-brand-green" : "text-brand-text-light hover:text-brand-green"
+          className={`flex flex-col items-center justify-center w-14 h-12 transition-all relative ${
+            pathname === "/profile" ? "text-brand-green scale-105 font-bold" : "text-brand-text-light hover:text-brand-green"
           }`}
         >
           <i className="fa-regular fa-user text-lg"></i>
           <span className="text-[9px] font-semibold mt-1">Profile</span>
+          {pathname === "/profile" && <span className="absolute bottom-1 w-5 h-0.5 bg-brand-green rounded-full"></span>}
         </Link>
       </div>
     </header>
